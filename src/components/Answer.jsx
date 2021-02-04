@@ -6,24 +6,25 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
   "button": {
-      borderColor: "#66bfc3",
-      color: "#66bfc3",
+      borderColor: "rgb(255, 54, 104)",
+      color: "rgb(255, 54, 104)",
       fontWeight: 600,
-      marginBottom: "8px",
+      padding: "3px 1rem",
+      marginTop: "8px",
       "&:hover": {
-        backgroundColor: "#66bfc3",
+        backgroundColor: "rgb(255, 54, 104)",
         color: "#fff"
       }
     }
   });
 
-const Answer = (props) => {
+const Answer = ({ content, nextId, put }) => {
   const classes = useStyles();
 return(
  
     <Button
-     className={classes.button} variant="outlined"  onClick={() => props.select(props.content, props.nextId)}>
-      {props.content}
+     className={classes.button} variant="outlined"  onClick={() => put(content, nextId)}>
+      {content}
     </Button>
  
   )

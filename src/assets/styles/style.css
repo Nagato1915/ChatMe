@@ -1,35 +1,140 @@
-.c-section {
+.chat-container {
   position: relative;
   height: 100vh;
   width: 100%;
-}
-
-.c-box {
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.3);
-  border-radius: 4px;
-  box-sizing: border-box;
-  height: 592px;
-  max-width: 432px;
-  padding: 0 1rem;
-  width: 100%;
-
-  /* Vertical and horizontal center alignment */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.c-grid__answer {
   display: flex;
-  flex-flow: column;
-  justify-content: flex-end;
-  height: 192px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, rgb(230, 32, 65), rgb(133, 64, 64))
 }
 
-.p-chat__bubble {
-  background: #41B6E6;
+.phone-box {
+  background: rgb(209, 209, 209);
+  border: 3px solid rgba(85, 81, 81, 0.3);
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 736px;
+  max-width: 414px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Phone Top */
+.phone-top {
+  width: 390px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.phone-top-top div {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.phone-top-bottom {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.phone-top-bottom div:first-child {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #000;
+  margin-right: 5px;
+}
+
+.phone-top-bottom div:last-child {
+  width: 60px;
+  height: 6px;
+  border-radius: 5px;
+  background: #000;
+  margin-left: 5px;
+}
+
+/* Phone Bottom */
+.phone-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+  height: 50px;
+}
+
+.phone-bottom div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white
+}
+
+/* Phone Inner */
+.phone-inner {
+  width: 390px;
+  height: 620px;
+  background: rgb(236, 236, 236);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  height: 59px;
+  color: #fff;
+  background: rgb(255, 54, 104);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-top {
+  width: 390px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+}
+
+.header-top div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-top div * {
+  padding: 0 2px;
+}
+
+.header h3 {
+  margin: 0;
+}
+
+/* Chat Area */
+.messeage {
+  background: rgb(190, 190, 190);
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: 500;
+  padding: .5rem;
+  margin-right: 1rem;
+  max-width: 80%;
+  width: auto;
+}
+
+.messeage__reverse {
+  background: rgb(255, 54, 104);
   border-radius: 4px;
   color: #fff;
   font-size: 14px;
@@ -40,18 +145,26 @@
   width: auto;
 }
 
-.p-chat__row {
+.chat {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   padding-right: 0 !important;
 }
 
-.p-chat__reverse {
+.chat__reverse {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
   padding-right: 0 !important;
+}
+
+/* Answer */
+.answer-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  height: 155px;
 }
 
 .p-question__title {
@@ -64,4 +177,28 @@
   font-size: 1rem;
   letter-spacing: .125rem;
   line-height: 1.7;
+}
+
+
+@media screen and (max-width: 425px) {
+  .phone-box {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+  }
+
+  .phone-top, .phone-bottom, .header {
+    display: none;
+  }
+
+  .phone-inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .answer-container {
+    height: 261px;
+    justify-content: flex-end;
+  }
+   
 }

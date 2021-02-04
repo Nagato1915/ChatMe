@@ -2,7 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/styles/index.css'
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { library } from '@fortawesome/fontawesome-svg-core'; 
+import { fab } from '@fortawesome/free-brands-svg-icons'; 
+import { fas } from '@fortawesome/free-solid-svg-icons'; 
+import { far } from '@fortawesome/free-regular-svg-icons'; 
+
+library.add(fab, fas, far);
+
 
 
 ReactDOM.render(
@@ -13,13 +19,4 @@ ReactDOM.render(
 );
 
 
-//import * as functions from 'firebase-functions';
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
-//# sourceMappingURL=index.js.map
 
-serviceWorker.unregister();

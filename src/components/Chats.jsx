@@ -7,19 +7,19 @@ import Chat from './Chat';
 
 const useStyles = makeStyles({
   chats: {
-    height: 400,
+    height: 406,
     padding: "10px 0 0 0",
     overflow: "auto",
     boxSizing: "border-box"
   }
 });
 
-const Chats = (props) => {
+const Chats = ({ chats }) => {
   const classes = useStyles();
 
   return(
     <List className={classes.chats} id={"scrollarea"}>
-     {props.chats.map((chat, index) => {
+     {chats.map((chat, index) => {
        return <Chat text={chat.text} type={chat.type} key={index.toString()}/>
       })}
     </List>
